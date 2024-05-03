@@ -1,0 +1,160 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<div class="main">
+  <header class="bk">
+    <div class="head">
+      <div class="logo">
+        <img class="logo_img" src="../assets/img/logo.png" alt="logo" [routerLink]="['/home']">
+      </div>
+      <div class="info">
+        <a href="#" class="h2 green">Why do you choose us</a>
+        <div class="info_in add">
+          <p>Exchange rates:<br>
+            EUR = 500tg <br>
+            USD = 450tg <br>
+          </p>
+          <p> Your city: <br>
+            <select >
+              <option value="Almaty" >Almaty</option>
+              <option value="Astana" >Astana</option>
+              <option value="Shymkent" >Shymkent</option>
+            </select>
+          </p>
+        </div>
+      </div>
+      <div class="contacts">
+        <a href="#" class="h2 green">Our address</a>
+        <a href="#" class="h1 greybold">Contact information</a>
+        <div class="pics">
+          <a href="#"><img src="../assets/img/user.png"></a>
+          <a href="#"><img src="../assets/img/isb.png"></a>
+          <a href="#"><img src="../assets/img/plus.png"></a>
+        </div>
+      </div>
+    </div>
+    <div class="line">
+      <div class="container">
+        <a href='#' class="h1 white">Categories</a>
+      </div>
+      <div class="container">
+        <a href='#' class="h1 white">Booking</a>
+      </div>
+      <div class="container">
+        <a href='#' class="h1 white">Agencies</a>
+      </div>
+      <div class="container">
+        <a href='#' class="h1 white">Individuals</a>
+      </div>
+      <div class="container ">
+        <a href='#' class="h1 white">About us</a>
+      </div>
+    </div>
+  </header>
+  <div class="cbs">
+    <div class="countries">
+      <ul class="h2">
+        <li><img src="../assets/img/country1.png">Russia</li>
+        <li><img src="assets/img/country2.png">Germany</li>
+        <li><img src="assets/img/country3.png">Japan</li>
+        <li><img src="assets/img/country4.png">Turkey</li>
+        <li><img src="assets/img/country5.png">Belgium</li>
+        <li><img src="assets/img/country6.png">Switzerland</li>
+        <li><img src="assets/img/country7.png">England</li>
+        <li><img src="assets/img/country8.png">France</li>
+        <li><img src="assets/img/country9.png">Italy</li>
+        <li><img src="assets/img/country10.png">Netherlands</li>
+        <li><img src="assets/img/country11.png">Argentine</li>
+        <li><img src="assets/img/country12.png">Portugal</li>
+        <li><img src="assets/img/country13.png">Ukraine</li>
+        <li><img src="assets/img/country14.png">Kazakhstan</li>
+        <li><img src="assets/img/country15.png">South Korea</li>
+        <li><img src="assets/img/country16.png">USA</li>
+        <li><img src="assets/img/country17.png">Croatia</li>
+        <li><img src="assets/img/country18.png">Denmark</li>
+        <li><img src="assets/img/country19.png">Norway</li>
+        <li><img src="assets/img/country20.png">Poland</li>
+        <li><img src="assets/img/country21.png">Sweden</li>
+        <li><img src="assets/img/country22.png">Ireland</li>
+      </ul>
+    </div>
+    <div class="scards">
+      <div *ngFor="let slide of slides; let i = index" [style.display]="i === currentSlideIndex ? 'block' : 'none'">
+        <img class="banner-img"src={{slide.image}} alt={{slide.alt}}>
+      </div>
+      <div class="topcity">
+        <div class="category greybold">Category of the bus</div>
+      </div>
+      <div class="bus-cards" *ngIf="loaded; else loading">
+        <div class="bus-card">
+          <img src="{{cat.img}}" alt="bus-card" class="bus-photo">
+          <div class="name-heart">
+            <p class="h2 greybold">{{cat.name}}</p>
+            <img src="../assets/img/heart.png">
+          </div>
+          <div class="bus-description">
+            <p>{{cat.description}}</p>
+          </div>
+        </div>
+      </div>
+      <!--      <fieldset class="creation">
+              <input type="text" [(ngModel)]="newBus.name">
+              <input type="text" [(ngModel)]="newBus.description">
+              <input type="number" [(ngModel)]="newBus.price">
+              <input type="string" [(ngModel)]="newBus.img">
+            </fieldset>-->
+    </div>
+    <div class="services">
+      <p class="h1 white">Services</p>
+      <ul class="h2">
+        <li>->Tour to Almaty</li>
+        <li>->Tour to Tokyo</li>
+        <li>->Tour to Madrid</li>
+        <li>->Tour to Bali</li>
+        <li>->Tour to Praga</li>
+        <li>->Tour to Kiev</li>
+        <li>->Tour to Seoul</li>
+        <li>->Tour to Pekin</li>
+        <li>->Tour to London</li>
+        <li>->Tour to Rome</li>
+        <li>->Tour to Turin</li>
+        <li>->Tour to Oslo</li>
+        <li>->Tour to Ottava</li>
+        <li>->Tour to Malibu</li>
+        <li>->Tour to Astana</li>
+        <li>->Tour to Sofia</li>
+        <li>->Tour to Vena</li>
+        <li>->Tour to Bern</li>
+        <li>->Tour to Baku</li>
+        <li>->Tour to LA</li>
+      </ul>
+    </div>
+  </div>
+  <footer class="bk">
+    <pre class="h3">
+               1995—2024 © Travel company
+    Tour operator in the Czech Republic, Italy, France,
+                          Austria Site Map
+      Policy regarding the protection and processing
+                          of personal  data
+    </pre>
+    <div class="contacts">
+      <a href="#" class="h2 green">Our address</a>
+      <a href="#" class="h1 greybold">Contact information</a>
+      <div class="pics">
+        <a href="#"><img src="../assets/img/tg.png"></a>
+        <a href="#"><img src="../assets/img/inst.png"></a>
+        <a href="#"><img src="../assets/img/face.png"></a>
+      </div>
+    </div>
+  </footer>
+</div>
+<ng-template #loading>
+  <p class="h1 green">Category is loading...</p>
+</ng-template>
+
+
+
